@@ -1,15 +1,15 @@
 %define up_name	ulex
 %define name	ocaml-%{up_name}
-%define version	0.9
-%define release	%mkrel 2
+%define version	1.0
+%define release	%mkrel 1
 %define ocaml_sitelib %(if [ -x /usr/bin/ocamlc ]; then ocamlc -where;fi)/site-lib
 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Summary:	A lexer generator for Unicode and OCaml
-Source: 	http://www.cduce.org/download/%{up_name}-%{version}.tar.bz2
-Patch:      %{name}-0.9.install_flags.patch
+Source0:	http://www.cduce.org/download/%{up_name}-%{version}.tar.bz2
+Patch0:		ocaml-ulex-1.0.install_flags.patch
 URL:		http://www.cduce.org/
 License:	GPL
 Group:		Development/Other
@@ -22,7 +22,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}
 %description
 ulex is a lexer generator for Unicode and OCaml written by Alain Frisch.
 
-%package devel
+%package	devel
 Summary:	Development files for %{name}
 Group:		Development/Other
 
@@ -32,10 +32,10 @@ using %{name}.
 
 %prep
 %setup -q -n %{up_name}-%{version}
-%patch -p 1
+%patch0 -p1 -b .install_flags
 
 %build
-%make all all.opt
+make all all.opt
 
 %install
 rm -rf %{buildroot}
@@ -49,5 +49,4 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc CHANGES README LICENSE
 %{ocaml_sitelib}/ulex
-
 
