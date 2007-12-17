@@ -16,7 +16,6 @@ BuildRequires:	ocaml
 BuildRequires:	camlp4
 BuildRequires:	mysql-devel
 BuildRequires:  findlib
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 ulex is a lexer generator for Unicode and OCaml written by Alain Frisch.
