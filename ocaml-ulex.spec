@@ -1,7 +1,7 @@
 %define up_name	ulex
 %define name	ocaml-%{up_name}
-%define version	1.0
-%define release	%mkrel 5
+%define version	1.1
+%define release	%mkrel 1
 
 Name:		%{name}
 Version:	%{version}
