@@ -1,7 +1,7 @@
 %define up_name	ulex
 %define name	ocaml-%{up_name}
 %define version	1.1
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 Name:		%{name}
 Version:	%{version}
@@ -15,7 +15,7 @@ Group:		Development/Other
 BuildRequires:	ocaml
 BuildRequires:	camlp4
 BuildRequires:	mysql-devel
-BuildRequires:  findlib
+BuildRequires:  ocaml-findlib
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
@@ -39,8 +39,8 @@ make all all.opt
 
 %install
 rm -rf %{buildroot}
-install -d -m 755 %{buildroot}/%{ocaml_sitelib}
-make install OCAMLFIND_INSTFLAGS="-destdir %{buildroot}/%{ocaml_sitelib}"
+install -d -m 755 %{buildroot}/%{_libdir}/ocaml/stublibs
+make install OCAMLFIND_DESTDIR="%{buildroot}/%{_libdir}/ocaml"
 
 %clean
 rm -rf %{buildroot}
@@ -48,10 +48,14 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc CHANGES README LICENSE
-%dir %{ocaml_sitelib}/ulex
-%{ocaml_sitelib}/ulex/*.cmi
+%dir %{_libdir}/ocaml/ulex
+%{_libdir}/ocaml/ulex/*.cmi
+%{_libdir}/ocaml/ulex/*.cma
+%{_libdir}/ocaml/ulex/META
 
 %files devel
 %defattr(-,root,root)
-%{ocaml_sitelib}/ulex/*
-%exclude %{ocaml_sitelib}/ulex/*.cmi
+%{_libdir}/ocaml/ulex/*.a
+%{_libdir}/ocaml/ulex/*.cmx
+%{_libdir}/ocaml/ulex/*.cmxa
+%{_libdir}/ocaml/ulex/*.mli
