@@ -1,0 +1,11 @@
+--- ulex-1.0/Makefile.orig	2007-05-30 09:14:56.000000000 +0200
++++ ulex-1.0/Makefile	2007-06-07 22:21:01.000000000 +0200
+@@ -15,7 +15,7 @@ install: all
+ 	cd _build && $(MAKE) -f ../Makefile realinstall
+ 
+ realinstall:
+-	ocamlfind install ulex ../META $(wildcard $(MODS:=.mli) $(MODS:=.cmi) $(MODS:=.cmx) pa_ulex.cma ulexing.a ulexing.cma ulexing.cmxa)
++	ocamlfind install $(OCAMLFIND_INSTFLAGS) ulex ../META $(wildcard $(MODS:=.mli) $(MODS:=.cmi) $(MODS:=.cmx) pa_ulex.cma ulexing.a ulexing.cma ulexing.cmxa)
+ 
+ uninstall:
+ 	ocamlfind remove ulex
