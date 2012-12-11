@@ -59,3 +59,55 @@ rm -rf %{buildroot}
 %{_libdir}/ocaml/ulex/*.cmx
 %{_libdir}/ocaml/ulex/*.cmxa
 %{_libdir}/ocaml/ulex/*.mli
+
+
+%changelog
+* Sat Jun 27 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.1-3mdv2010.0
++ Revision: 389930
+- rebuild
+
+* Mon Dec 29 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.1-2mdv2009.1
++ Revision: 320721
+- move non-devel files into main package
+- site-lib hierarchy doesn't exist anymore
+
+* Thu Aug 14 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.1-1mdv2009.0
++ Revision: 272043
+- update to new version 1.1
+
+* Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 1.0-5mdv2009.0
++ Revision: 254376
+- rebuild
+
+* Tue Mar 04 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.0-3mdv2008.1
++ Revision: 178370
+- rebuild
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Sat Sep 01 2007 Guillaume Rousse <guillomovitch@mandriva.org> 1.0-2mdv2008.0
++ Revision: 77681
+- drop macro definition, now in rpm-mandriva-setup
+  ship .cmi file in non-devel subpackage
+
+* Thu Jun 07 2007 Per Øyvind Karlsen <peroyvind@mandriva.org> 1.0-1mdv2008.0
++ Revision: 36883
+- new release: 1.0
+- regenerate P0
+
+
+* Mon Feb 19 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.9-2mdv2007.0
++ Revision: 122748
+- also build native version
+
+* Mon Feb 19 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.9-1mdv2007.1
++ Revision: 122718
+- fix build dependencies
+
+* Mon Feb 19 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.9-1mdv2007.1
+- first mdv release
+
