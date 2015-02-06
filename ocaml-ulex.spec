@@ -6,7 +6,7 @@
 Summary:	A lexer generator for Unicode and OCaml
 Name:		ocaml-%{up_name}
 Version:	1.1
-Release:	5
+Release:	6
 License:	MIT
 Group:		Development/Other
 Url:		http://www.cduce.org/
