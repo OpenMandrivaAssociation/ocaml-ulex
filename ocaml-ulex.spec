@@ -12,6 +12,7 @@ Group:		Development/Other
 Url:		https://www.cduce.org/
 Source0:	http://www.cduce.org/download/%{up_name}-%{version}.tar.bz2
 Patch0:		ocaml-ulex-1.0.install_flags.patch
+BuildRequires:	make
 BuildRequires:	camlp4
 BuildRequires:	ocaml
 BuildRequires:	ocaml-findlib
